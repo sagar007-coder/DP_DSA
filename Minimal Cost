@@ -1,0 +1,16 @@
+public class Solution {
+    public static int minimizeCost(int n, int k, int []height){
+        // Write your code here.
+        if(n==0)
+        return 1;
+
+        int left = minimizeCost((n-k), k, height);
+         if(n-k)>0
+        int right = minimizeCost(n-k, k, height)
+        
+
+        int min = Math.min(right, left);
+       
+        
+    }
+}
