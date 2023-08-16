@@ -1,0 +1,14 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static int countDistinctWayToClimbStair(long nStairs) {
+		// Write your code here.
+       
+       long prev2 = 1;
+  long prev = 1;
+  
+  for(long i=2; i<=nStairs; i++){
+      long cur_i = (prev2 + prev)%1000000007;
+      prev2 = prev;
+      prev= cur_i;}
+    return (int) prev;}}
