@@ -1,0 +1,31 @@
+import java.util.* ;
+import java.io.*; 
+import java.util.*;
+public class Solution {
+	public static int maximumNonAdjacentSum(ArrayList<Integer> nums) {
+		// Write your code here.
+
+        int dp[] = new int[nums.size()];
+        Arrays.fill(dp,-1);
+
+        return f (nums.size()-1,nums, dp);
+
+    }
+    public static int f(int sze, ArrayList<Integer> nums , int []dp){
+       
+        if(sze<0)
+        return 0;
+        if(sze == 0)
+        return nums.get(sze);
+       
+        if(dp[sze]!=-1) return dp[sze];
+        
+        int pick = nums.get(sze) + f(sze-2,nums, dp);
+        
+        int notPick = 0 + f(sze-1,nums,dp);
+        
+        
+            return dp[sze] = Math.max(pick, notPick);
+        }
+        
+	}
